@@ -20,10 +20,10 @@ export default function AboutPage() {
       </section>
 
       <section className="about-facts shell" aria-label="职业履历摘要">
-        <article className="about-fact-primary"><strong>02</strong><p><b>一线 PE 基金</b><span>Portfolio Company CEO</span></p></article>
-        <article><strong>02</strong><p>跨国企业<br />China CEO</p></article>
-        <article><strong>03</strong><p>国企 · 民企 · 外企<br />多种所有制经历</p></article>
-        <article><strong>CN / US</strong><p>中国与美国<br />两地工作经验</p></article>
+          <article><strong>02</strong><p><b>一线 PE 基金</b><span>Portfolio Company CEO</span></p></article>
+          <article><strong>02</strong><p><b>跨国企业</b><span>China CEO</span></p></article>
+          <article><strong>03</strong><p><b>国企 · 民企 · 外企</b><span>多种所有制经历</span></p></article>
+          <article><strong>CN / US</strong><p><b>中国与美国</b><span>两地工作经验</span></p></article>
       </section>
 
       <section className="about-story shell">
