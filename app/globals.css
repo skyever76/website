@@ -105,10 +105,9 @@ h1 { max-width:900px; margin:0; font-size:clamp(52px,8.6vw,124px); line-height:.
 .about-facts article:not(:first-child) { padding-left:25px; }
 .about-facts strong { font-size:clamp(43px,5.5vw,76px); line-height:1; letter-spacing:-.06em; }
 .about-facts p { margin:0; font-size:19px; line-height:1.4; }
-.about-facts p b,
 .about-facts p span { display:block; font-size:inherit; line-height:inherit; }
-.about-facts p b { color:var(--ink); letter-spacing:-.02em; font-weight:620; }
-.about-facts p span { margin-top:5px; color:var(--muted); font-weight:450; }
+.about-facts .about-fact-title { color:var(--ink); letter-spacing:-.02em; font-weight:620; }
+.about-facts .about-fact-detail { margin-top:5px; color:var(--muted); font-weight:450; }
 .about-story,.about-capabilities,.about-english { display:grid; grid-template-columns:270px 1fr; gap:40px; padding:0 0 130px; }
 .about-narrative { max-width:760px; }
 .about-narrative p { margin:0 0 28px; font-size:18px; line-height:1.95; }
