@@ -9,8 +9,8 @@ export default function Home() {
       <Header />
       <section className="hero shell">
         <p className="eyebrow">企业经营提升 · Operating Improvement</p>
-        <h1>把经营经验，<br />变成增长的方法。</h1>
-        <p className="hero-copy">把全球一线运营经验，转化为适合中国企业的运营提升方法。<span>Turning frontline global operating experience into improvement playbooks for Chinese enterprises.</span></p>
+        <h1>把全球一线运营经验，<br />转化为适合中国企业的<br />运营提升方法。</h1>
+        <p className="hero-copy hero-copy-en">Turning frontline global operating experience into improvement playbooks for Chinese enterprises.</p>
         <div className="field-line" aria-label="核心知识领域">{categories.map((field) => <span key={field.key}>{field.zh} {field.en}</span>)}</div>
       </section>
       <section className="latest shell" aria-labelledby="latest-title">

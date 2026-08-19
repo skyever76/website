@@ -14,7 +14,9 @@ nav a:hover { color:var(--ink); text-decoration:underline; text-underline-offset
 .hero { padding:100px 0 112px; }
 .eyebrow { margin:0 0 30px; color:var(--muted); font-size:13px; letter-spacing:.08em; }
 h1 { max-width:900px; margin:0; font-size:clamp(52px,8.6vw,124px); line-height:.94; letter-spacing:-.075em; font-weight:720; }
+.hero h1 { max-width:1140px; font-size:clamp(50px,7vw,98px); line-height:1.02; letter-spacing:-.065em; }
 .hero-copy { max-width:680px; margin:56px 0 50px; font-size:clamp(18px,2.1vw,27px); line-height:1.55; letter-spacing:-.02em; }
+.hero-copy-en { max-width:650px; color:var(--muted); font-size:15px; line-height:1.7; letter-spacing:0; }
 .hero-copy span { display:block; max-width:600px; margin-top:14px; color:var(--muted); font-size:14px; line-height:1.6; letter-spacing:0; }
 .field-line { display:flex; flex-wrap:wrap; gap:7px 0; border-top:1px solid var(--line); padding-top:20px; }
 .field-line span { color:var(--muted); font-size:13px; }
@@ -119,6 +121,7 @@ h1 { max-width:900px; margin:0; font-size:clamp(52px,8.6vw,124px); line-height:.
   .language { grid-column:2; grid-row:1; }
   .hero { padding:72px 0 84px; }
   h1 { font-size:clamp(50px,15vw,72px); }
+  .hero h1 { font-size:clamp(45px,12.7vw,62px); line-height:1.08; }
   .hero-copy { margin-top:42px; }
   .field-line span { font-size:12px; }
   .latest { grid-template-columns:1fr; gap:32px; padding-bottom:72px; }
