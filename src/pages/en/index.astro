@@ -1,0 +1,29 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import InsightCard from "../../components/InsightCard.astro";
+import { categories } from "../../data/site";
+
+const insights = (await getCollection("insights", ({ data }) => !data.draft && data.lang !== "zh"))
+  .sort((a, b) => b.data.date.localeCompare(a.data.date))
+  .slice(0, 2);
+const placeholders = Array.from({ length: 2 - insights.length });
+---
+<BaseLayout title="Adam Cui | Operating Improvement" description="Turning frontline global operating experience into improvement playbooks for Chinese enterprises." locale="en" path="/en">
+  <main>
+    <section class="hero shell">
+      <p class="eyebrow">Operating Improvement</p>
+      <h1>Turning frontline global operating experience into improvement playbooks for Chinese enterprises.</h1>
+      <div class="field-line" aria-label="Core knowledge fields">{categories.map((field) => <span>{field.en}</span>)}</div>
+    </section>
+    <section class="latest shell" aria-labelledby="latest-title-en">
+      <div class="section-heading"><p>01</p><h2 id="latest-title-en">Latest Insights</h2></div>
+      <div><div class="latest-grid">{insights.map((insight) => <InsightCard insight={insight} locale="en" />)}{placeholders.map(() => <div class="latest-placeholder"><span class="meta">Next insight</span><p>In development</p><small>Only reviewed ideas with lasting value are published.</small></div>)}</div><a class="text-link" href="/en/insights">View all insights →</a></div>
+    </section>
+    <section class="knowledge shell" aria-labelledby="knowledge-title-en">
+      <div class="section-heading"><p>02</p><h2 id="knowledge-title-en">Knowledge Fields</h2></div>
+      <div class="field-grid">{categories.map((field, index) => <a href={`/en/insights#${field.key.replaceAll(" ", "-")}`}><span>{String(index + 1).padStart(2, "0")}</span><h3>{field.en}</h3><p>{field.noteEn}</p><i>↗</i></a>)}</div>
+    </section>
+    <section class="manifesto shell"><p>“Profit is an opinion. Cash is a fact.”</p><a class="text-link" href="/en/about">About Adam →</a></section>
+  </main>
+</BaseLayout>

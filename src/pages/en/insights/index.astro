@@ -1,0 +1,21 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import { categories } from "../../../data/site";
+
+const allInsights = (await getCollection("insights", ({ data }) => !data.draft && data.lang !== "zh"))
+  .sort((a, b) => b.data.date.localeCompare(a.data.date));
+const knownCategories = new Set(categories.map((category) => category.key as string));
+const directory = [...categories, { key: "Other", zh: "其他", en: "Other", note: "跨领域观点与延伸思考", noteEn: "Cross-disciplinary ideas and adjacent perspectives" }];
+---
+<BaseLayout title="Insights" description="Adam Cui's operating improvement insights, organized by knowledge field." locale="en" path="/en/insights">
+  <main>
+    <section class="page-intro shell"><p class="eyebrow">Insights</p><h1>To change the outcome,<br />first see how it is produced.</h1><p>Long-lasting ideas and practical methods, organized around enterprise operating outcomes.</p></section>
+    <section class="insight-directory shell">
+      {directory.map((category, index) => {
+        const items = category.key === "Other" ? allInsights.filter((item) => !knownCategories.has(item.data.category)) : allInsights.filter((item) => item.data.category === category.key);
+        return <section id={category.key.replaceAll(" ", "-")} class="directory-card"><header><span>{String(index + 1).padStart(2, "0")}</span><h2>{category.en}</h2><p>{category.noteEn}</p></header><div class="directory-links">{items.length ? items.map((item) => <a href={`/en/insights/${item.id}`} class="directory-link"><span>{item.data.series || "Insight"}</span><strong>{item.data.title}</strong><i aria-hidden="true">↗</i></a>) : <p class="empty">In development</p>}</div></section>;
+      })}
+    </section>
+  </main>
+</BaseLayout>

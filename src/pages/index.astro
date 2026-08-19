@@ -1,0 +1,29 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import InsightCard from "../components/InsightCard.astro";
+import { categories } from "../data/site";
+
+const insights = (await getCollection("insights", ({ data }) => !data.draft && data.lang !== "en"))
+  .sort((a, b) => b.data.date.localeCompare(a.data.date))
+  .slice(0, 2);
+const placeholders = Array.from({ length: 2 - insights.length });
+---
+<BaseLayout title="Adam Cui｜企业经营提升" description="把全球一线运营经验，转化为适合中国企业的运营提升方法。" path="/">
+  <main>
+    <section class="hero shell">
+      <p class="eyebrow">企业经营提升</p>
+      <h1>把全球一线运营经验，<br />转化为适合中国企业的<br />运营提升方法。</h1>
+      <div class="field-line" aria-label="核心知识领域">{categories.map((field) => <span>{field.zh}</span>)}</div>
+    </section>
+    <section class="latest shell" aria-labelledby="latest-title">
+      <div class="section-heading"><p>01</p><h2 id="latest-title">最新观点</h2></div>
+      <div><div class="latest-grid">{insights.map((insight) => <InsightCard insight={insight} />)}{placeholders.map(() => <div class="latest-placeholder"><span class="meta">下一篇</span><p>正在整理</p><small>只发布经过确认、值得长期保留的内容。</small></div>)}</div><a class="text-link" href="/insights">查看全部洞察 →</a></div>
+    </section>
+    <section class="knowledge shell" aria-labelledby="knowledge-title">
+      <div class="section-heading"><p>02</p><h2 id="knowledge-title">知识领域</h2></div>
+      <div class="field-grid">{categories.map((field, index) => <a href={`/insights#${field.key.replaceAll(" ", "-")}`}><span>{String(index + 1).padStart(2, "0")}</span><h3>{field.zh}</h3><p>{field.note}</p><i>↗</i></a>)}</div>
+    </section>
+    <section class="manifesto shell"><p>“利润是观点，现金是事实。”</p><a class="text-link" href="/about">关于 Adam →</a></section>
+  </main>
+</BaseLayout>

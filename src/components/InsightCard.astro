@@ -1,0 +1,16 @@
+---
+interface Props {
+  insight: {
+    id: string;
+    data: { title: string; description: string; date: string; lang: "zh" | "en" | "both"; series?: string };
+  };
+  locale?: "zh" | "en";
+}
+import { languageLabel } from "../data/site";
+const { insight, locale = "zh" } = Astro.props;
+const prefix = locale === "en" ? "/en" : "";
+---
+<a class="insight-row" href={`${prefix}/insights/${insight.id}`}>
+  <div><span class="meta">{insight.data.series ? `${insight.data.series} · ` : ""}{languageLabel[insight.data.lang]} · {insight.data.date.replaceAll("-", ".")}</span><h3>{insight.data.title}</h3><p>{insight.data.description}</p></div>
+  <span class="arrow" aria-hidden="true">↗</span>
+</a>

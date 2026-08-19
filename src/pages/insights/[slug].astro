@@ -1,0 +1,22 @@
+---
+import { getCollection, render } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { categories, languageLabel } from "../../data/site";
+
+export async function getStaticPaths() {
+  const insights = await getCollection("insights", ({ data }) => !data.draft && data.lang !== "en");
+  return insights.map((insight) => ({ params: { slug: insight.id }, props: { insight } }));
+}
+
+const { insight } = Astro.props;
+const { Content } = await render(insight);
+const category = categories.find((entry) => entry.key === insight.data.category);
+---
+<BaseLayout title={insight.data.title} description={insight.data.description} path={`/insights/${insight.id}`} article>
+  <main>
+    <article class="article shell">
+      <header><a class="back-link" href="/insights">← 返回洞察</a><p class="eyebrow">{insight.data.series || languageLabel[insight.data.lang]} · {category?.zh}</p><h1>{insight.data.title}</h1><p class="article-deck">{insight.data.description}</p><div class="article-meta"><span>{insight.data.date}</span><span>{insight.data.tags.join(" · ")}</span></div></header>
+      <div class="article-layout"><aside><span>知识领域</span><strong>{category?.zh}</strong><small>{category?.en}</small></aside><div class="article-body"><Content /></div></div>
+    </article>
+  </main>
+</BaseLayout>

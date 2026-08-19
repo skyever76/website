@@ -1,0 +1,21 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { categories, languageLabel } from "../../data/site";
+
+const allInsights = (await getCollection("insights", ({ data }) => !data.draft && data.lang !== "en"))
+  .sort((a, b) => b.data.date.localeCompare(a.data.date));
+const knownCategories = new Set(categories.map((category) => category.key as string));
+const directory = [...categories, { key: "Other", zh: "其他", en: "Other", note: "跨领域观点与延伸思考", noteEn: "Cross-disciplinary ideas and adjacent perspectives" }];
+---
+<BaseLayout title="洞察" description="按运营提升知识树组织的 Adam Cui 深度洞察。" path="/insights">
+  <main>
+    <section class="page-intro shell"><p class="eyebrow">洞察</p><h1>改变经营结果，<br />先看清结果如何发生。</h1><p>围绕企业经营结果，把长期有效的观点与实战方法放进同一套框架。</p></section>
+    <section class="insight-directory shell">
+      {directory.map((category, index) => {
+        const items = category.key === "Other" ? allInsights.filter((item) => !knownCategories.has(item.data.category)) : allInsights.filter((item) => item.data.category === category.key);
+        return <section id={category.key.replaceAll(" ", "-")} class="directory-card"><header><span>{String(index + 1).padStart(2, "0")}</span><h2>{category.zh}</h2><p>{category.note}</p></header><div class="directory-links">{items.length ? items.map((item) => <a href={`/insights/${item.id}`} class="directory-link"><span>{item.data.series || languageLabel[item.data.lang]}</span><strong>{item.data.title}</strong><i aria-hidden="true">↗</i></a>) : <p class="empty">待沉淀</p>}</div></section>;
+      })}
+    </section>
+  </main>
+</BaseLayout>

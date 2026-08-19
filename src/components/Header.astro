@@ -1,0 +1,20 @@
+---
+interface Props { locale?: "zh" | "en"; path?: string; }
+const { locale = "zh", path = "/" } = Astro.props;
+const isEnglish = locale === "en";
+const zhPath = isEnglish ? (path.replace(/^\/en(?=\/|$)/, "") || "/") : path;
+const enPath = isEnglish ? path : (path === "/" ? "/en" : `/en${path}`);
+const withLocale = (target: string) => isEnglish ? `/en${target === "/" ? "" : target}` : target;
+---
+<header class="site-header shell">
+  <a class="wordmark" href={isEnglish ? "/en" : "/"}>Adam Cui</a>
+  <nav aria-label={isEnglish ? "Primary navigation" : "主导航"}>
+    <a href={withLocale("/insights")}>{isEnglish ? "Insights" : "洞察"}</a>
+    <a href={withLocale("/playbooks")}>{isEnglish ? "Method" : "方法"}</a>
+    <a href={withLocale("/about")}>{isEnglish ? "About" : "关于"}</a>
+    <a href={withLocale("/contact")}>{isEnglish ? "Contact" : "联系"}</a>
+  </nav>
+  <div class="language" aria-label={isEnglish ? "Language" : "语言"}>
+    <a class:list={{ active: !isEnglish }} href={zhPath}>中</a><span>/</span><a class:list={{ active: isEnglish }} href={enPath}>EN</a>
+  </div>
+</header>

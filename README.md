@@ -10,6 +10,7 @@ Adam Cui 的个人专业网站：面向中国企业的运营提升知识库与�
 npm install
 npm run dev
 npm run build
+npm run test
 ```
 
 ## 内容更新
@@ -41,8 +42,12 @@ draft: false
 
 代码仓库：`https://github.com/skyever76/website.git`
 
-Cloudflare Pages 连接 GitHub 的 `main` 分支，生产域名为 `www.adamcui.cn`。每次推送后自动构建与发布；根域名 `adamcui.cn` 建议重定向至 `www.adamcui.cn`。
+项目采用 Astro 纯静态构建，不包含服务端渲染、数据库或运行时应用代码。Cloudflare 连接 GitHub 的 `main` 分支后，每次推送自动构建与发布；生产域名为 `www.adamcui.cn`，根域名 `adamcui.cn` 建议重定向至 `www.adamcui.cn`。
 
 构建命令：`npm run build`
 
-该项目使用 Cloudflare 兼容的 vinext 构建，并保留 `.openai/hosting.json` 供 Sites 预览与发布使用。
+部署命令：`npm run deploy`
+
+静态输出目录：`dist`
+
+`wrangler.jsonc` 只上传 `dist` 中的静态资源；网站本身不依赖 Worker 运行时逻辑。连接 GitHub 时在 Cloudflare Workers & Pages 中选择 **Workers Builds**，填入以上构建与部署命令即可。
