@@ -1,7 +1,37 @@
 import type { Metadata } from "next";
 import { Header, Footer } from "../_components/SiteChrome";
-const playbooks = [
-  ["Pricing", "定价", "从客户价值、价格架构到落地治理。"], ["Working Capital", "营运资本", "把库存、应收与应付变成经营动作。"], ["100-Day Plan", "百天计划", "在关键窗口建立事实、节奏与责任。"], ["Sales Productivity", "销售效能", "用过程计量改善销售产出。"], ["M&A Integration", "并购整合", "把交易逻辑转化为协同与经营结果。"]
+
+const steps = [
+  { zh: "止血", en: "Stabilize", statement: "现金流比利润还要重要。" },
+  { zh: "修理", en: "Repair", statement: "改变人、方法和战场。" },
+  { zh: "重回增长", en: "Return to Growth", statement: "找到价值点，集中资源投入。" },
+  { zh: "平台化", en: "Scale", statement: "把成功模式标准化、复制和放大。" },
 ];
-export const metadata: Metadata = { title: "方法 Playbooks", description: "把零散经验沉淀为可复用的企业经营提升打法。" };
-export default function PlaybooksPage() { return <main><Header /><section className="page-intro shell"><p className="eyebrow">Playbooks / 方法</p><h1>从观点，<br />走向可复用的打法。</h1><p>零散文章会逐渐长成结构化方法论，支持团队在真实经营场景中反复使用。</p></section><section className="playbook-list shell">{playbooks.map(([en, zh, note], index) => <article key={en}><span>{String(index + 1).padStart(2, "0")}</span><h2>{en}<small>{zh}</small></h2><p>{note}</p><mark>规划中</mark></article>)}</section><Footer /></main>; }
+
+export const metadata: Metadata = { title: "Adam Cui 四步法", description: "止血、修理、重回增长、平台化：Adam Cui 的企业经营改善四步法。" };
+
+export default function PlaybooksPage() {
+  return (
+    <main>
+      <Header />
+      <section className="method-hero shell">
+        <p className="eyebrow">Adam Cui Method / 四步法</p>
+        <h1>先活下来，<br />再长起来。</h1>
+        <p>经营改善有顺序。先稳住基本盘，再修复系统、重启增长，最终形成可以复制的平台。</p>
+      </section>
+      <section className="method-steps shell" aria-label="Adam Cui 企业经营改善四步法">
+        {steps.map((step, index) => (
+          <article key={step.zh}>
+            <span className="method-index">{String(index + 1).padStart(2, "0")}</span>
+            <h2>{step.zh}<small>{step.en}</small></h2>
+            <p>{step.statement}</p>
+          </article>
+        ))}
+      </section>
+      <section className="method-sequence shell" aria-label="四步法顺序">
+        {steps.map((step, index) => <span key={step.zh}>{step.zh}{index < steps.length - 1 && <i>→</i>}</span>)}
+      </section>
+      <Footer />
+    </main>
+  );
+}

@@ -69,14 +69,18 @@ h1 { max-width:900px; margin:0; font-size:clamp(52px,8.6vw,124px); line-height:.
 .category-block > header p { margin:0; color:var(--muted); font-size:13px; line-height:1.6; }
 .empty { margin:0; padding:20px 0 72px; border-top:1px solid var(--line); color:#aaa69e; font-size:13px; }
 
-.playbook-list { padding:48px 0 120px; }
-.playbook-list article { display:grid; grid-template-columns:70px 1.2fr 1fr auto; gap:28px; align-items:start; padding:28px 0 42px; border-top:1px solid var(--line); }
-.playbook-list article:first-child { border-color:var(--ink); }
-.playbook-list article > span { color:var(--muted); font-size:11px; }
-.playbook-list h2 { margin:-6px 0 0; font-size:clamp(27px,4vw,46px); letter-spacing:-.045em; }
-.playbook-list h2 small { display:block; margin-top:5px; color:var(--muted); font-size:14px; font-weight:450; letter-spacing:0; }
-.playbook-list p { margin:0; color:var(--muted); font-size:14px; line-height:1.7; }
-.playbook-list mark { background:transparent; border:1px solid var(--line); border-radius:99px; padding:5px 9px; color:var(--muted); font-size:11px; white-space:nowrap; }
+.method-hero { min-height:76vh; padding:95px 0 105px; display:flex; flex-direction:column; justify-content:space-between; border-bottom:1px solid var(--ink); }
+.method-hero h1 { max-width:1080px; font-size:clamp(66px,10vw,142px); line-height:.92; }
+.method-hero > p:last-child { max-width:610px; margin:80px 0 0 auto; color:var(--muted); font-size:18px; line-height:1.8; }
+.method-steps { padding:0 0 130px; }
+.method-steps article { min-height:310px; display:grid; grid-template-columns:90px 1fr 1fr; gap:35px; align-items:center; border-bottom:1px solid var(--line); }
+.method-index { align-self:start; padding-top:34px; color:var(--muted); font-size:11px; }
+.method-steps h2 { margin:0; font-size:clamp(58px,8.2vw,112px); line-height:.95; letter-spacing:-.065em; }
+.method-steps h2 small { display:block; margin-top:13px; color:var(--muted); font-size:14px; font-weight:450; letter-spacing:.01em; }
+.method-steps article > p { max-width:420px; margin:0; font-size:clamp(23px,2.6vw,34px); line-height:1.55; letter-spacing:-.03em; }
+.method-sequence { margin-bottom:125px; padding:40px 0; display:flex; justify-content:space-between; border-top:1px solid var(--ink); border-bottom:1px solid var(--line); }
+.method-sequence span { display:flex; align-items:center; gap:28px; font-size:14px; font-weight:600; }
+.method-sequence i { color:var(--muted); font-style:normal; font-weight:400; }
 
 .about-hero { min-height:76vh; padding:95px 0 105px; display:flex; flex-direction:column; justify-content:space-between; border-bottom:1px solid var(--ink); }
 .about-hero h1 { max-width:1100px; font-size:clamp(62px,9.4vw,132px); line-height:.94; }
@@ -165,8 +169,16 @@ h1 { max-width:900px; margin:0; font-size:clamp(52px,8.6vw,124px); line-height:.
   .page-intro > p:last-child { margin-top:38px; }
   .category-list { padding-top:35px; }
   .category-block { gap:28px; padding-bottom:62px; }
-  .playbook-list article { grid-template-columns:42px 1fr auto; gap:16px; }
-  .playbook-list article p { grid-column:2/-1; }
+  .method-hero { min-height:auto; padding:72px 0 84px; }
+  .method-hero h1 { font-size:clamp(58px,17vw,82px); line-height:.98; }
+  .method-hero > p:last-child { margin-top:65px; font-size:16px; }
+  .method-steps { padding-bottom:90px; }
+  .method-steps article { min-height:270px; grid-template-columns:38px 1fr; gap:15px; align-content:center; }
+  .method-index { padding-top:5px; }
+  .method-steps h2 { font-size:clamp(51px,15vw,72px); }
+  .method-steps article > p { grid-column:2; margin-top:24px; font-size:22px; }
+  .method-sequence { margin-bottom:90px; padding:30px 0; flex-wrap:wrap; gap:18px 0; }
+  .method-sequence span { gap:12px; font-size:12px; }
   .about-hero { min-height:auto; padding:72px 0 84px; }
   .about-hero h1 { font-size:clamp(50px,14vw,70px); line-height:1.03; }
   .about-hero > p:last-child { margin-top:62px; font-size:16px; }
