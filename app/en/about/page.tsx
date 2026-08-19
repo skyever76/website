@@ -27,7 +27,7 @@ export default function EnglishAboutPage() {
       <section className="about-story shell">
         <div className="section-heading"><p>01</p><h2>Career</h2></div>
         <div className="about-narrative">
-          <p className="about-lead">From reporting to multinational boards to working shoulder to shoulder with frontline teams in local businesses.</p>
+          <p className="about-lead">World-class strategy and multinational management discipline, matched by frontline experience winning in China through deeply localized approaches.</p>
           <p>Experience spans state-owned, private and multinational enterprises, including two CEO roles in portfolio companies backed by leading private equity funds and two China CEO roles in multinational corporations. Work in both China and the United States brings together global systems and local operating realities.</p>
           <p>Across technology, industrial and B2B services, the recurring work has been organic growth, turnaround, M&amp;A integration and organizational modernization—translating strategy into revenue, margin, cash and capability.</p>
         </div>
