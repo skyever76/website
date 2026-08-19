@@ -4,6 +4,7 @@ import { InsightCard } from "./_components/InsightCard";
 import { categories, insights } from "./_lib/content";
 
 export default function Home() {
+  const latestInsights = insights.slice(0, 2);
   return (
     <main>
       <Header />
@@ -15,7 +16,7 @@ export default function Home() {
       </section>
       <section className="latest shell" aria-labelledby="latest-title">
         <div className="section-heading"><p>01 / 最新观点</p><h2 id="latest-title">Latest Insights</h2></div>
-        <div>{insights.slice(0, 3).map((insight) => <InsightCard key={insight.slug} insight={insight} />)}<Link className="text-link" href="/insights">查看全部洞察 →</Link></div>
+        <div><div className="latest-grid">{latestInsights.map((insight) => <InsightCard key={insight.slug} insight={insight} />)}{latestInsights.length < 2 ? <div className="latest-placeholder"><span className="meta">Next Insight</span><p>下一篇正在整理</p><small>只发布经过确认、值得长期保留的内容。</small></div> : null}</div><Link className="text-link" href="/insights">查看全部洞察 →</Link></div>
       </section>
       <section className="knowledge shell" aria-labelledby="knowledge-title">
         <div className="section-heading"><p>02 / 知识体系</p><h2 id="knowledge-title">Knowledge Fields</h2></div>
