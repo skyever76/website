@@ -29,7 +29,7 @@ export default function AboutPage() {
       <section className="about-story shell">
         <div className="section-heading"><p>01 / 职业经历</p><h2>One career,<br />multiple lenses</h2></div>
         <div className="about-narrative">
-          <p className="about-lead">既承担过完整的 CEO 责任，也接受过国际战略咨询的系统训练。</p>
+          <p className="about-lead">既有向跨国公司董事会汇报的时刻，也有深入本土企业一线、与团队并肩攻坚的经历。</p>
           <p>历经国企、民企与跨国企业。两次担任一线 PE 基金 Portfolio Company CEO，两次领导跨国企业中国业务。中美工作经历，带来全球体系与中国场景的双重视角。</p>
           <p>履历横跨科技、工业与 B2B 服务，贯穿有机增长、经营转型、并购整合与组织现代化。最终指向同一件事：让战略进入经营现场，转化为收入、利润、现金与组织能力。</p>
         </div>
