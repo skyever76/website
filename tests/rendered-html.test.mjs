@@ -35,7 +35,7 @@ test("renders the insights knowledge tree", async () => {
   const response = await render("/insights");
   assert.equal(response.status, 200);
   const html = await response.text();
-  assert.match(html, /按知识树组织/);
+  assert.match(html, /改变经营结果/);
   assert.match(html, /并购整合/);
   assert.match(html, /href="\/en\/insights"/);
   assert.doesNotMatch(html, /改激励之前/);
@@ -45,10 +45,10 @@ test("renders the English insights directory", async () => {
   const response = await render("/en/insights");
   assert.equal(response.status, 200);
   const html = await response.text();
-  assert.match(html, /Organized by knowledge/);
+  assert.match(html, /To change the outcome/);
   assert.match(html, /M&amp;A Integration|M&A Integration/);
   assert.match(html, /href="\/insights"/);
-  assert.doesNotMatch(html, /按知识树组织|并购整合/);
+  assert.doesNotMatch(html, /改变经营结果|并购整合/);
 });
 
 test("removed dummy insight is no longer available", async () => {
