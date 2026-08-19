@@ -1,0 +1,4 @@
+import type { Metadata } from "next";
+import { Header, Footer } from "../_components/SiteChrome";
+export const metadata: Metadata = { title: "联系 Contact", description: "联系 Adam Cui，讨论企业经营提升、AI 赋能与并购整合。" };
+export default function ContactPage() { return <main><Header /><section className="page-intro shell contact-intro"><p className="eyebrow">Contact / 联系</p><h1>交流真正发生在<br />经营现场的问题。</h1><p>欢迎围绕企业经营提升、AI 赋能与并购整合交流。</p></section><section className="contact-list shell"><a href="#wechat"><span>微信公众号</span><strong>China PE Operator</strong><i>关注 / Follow</i></a><a href="https://www.linkedin.com/" target="_blank" rel="noreferrer"><span>LinkedIn</span><strong>Adam Cui</strong><i>访问 / Visit ↗</i></a><a href="#social"><span>知乎 · 小红书</span><strong>Adam Cui</strong><i>同名账号</i></a></section><Footer /></main>; }
