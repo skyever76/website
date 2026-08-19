@@ -24,15 +24,10 @@ test("renders the insights knowledge tree", async () => {
   const html = await response.text();
   assert.match(html, /按知识树组织/);
   assert.match(html, /M&amp;A Integration|M&A Integration/);
-  assert.match(html, /改激励之前/);
+  assert.doesNotMatch(html, /改激励之前/);
 });
 
-test("uses article-specific detail metadata without the site social card", async () => {
+test("removed dummy insight is no longer available", async () => {
   const response = await render("/insights/gai-ji-li-zhi-qian-xian-gai-ji-liang");
-  assert.equal(response.status, 200);
-  const html = await response.text();
-  assert.match(html, /<title>经营进化 #01｜改激励之前，先改计量｜Adam Cui<\/title>/);
-  assert.match(html, /property="og:title" content="经营进化 #01｜改激励之前，先改计量"/);
-  assert.match(html, /name="twitter:title" content="经营进化 #01｜改激励之前，先改计量"/);
-  assert.doesNotMatch(html, /og\.png/);
+  assert.equal(response.status, 404);
 });
