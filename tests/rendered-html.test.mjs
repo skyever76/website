@@ -14,8 +14,21 @@ test("renders the Adam Cui knowledge site", async () => {
   const html = await response.text();
   assert.match(html, /Adam Cui/);
   assert.match(html, /企业经营提升/);
-  assert.match(html, /AI Enablement/);
+  assert.match(html, /AI 赋能/);
+  assert.match(html, /href="\/en"/);
+  assert.doesNotMatch(html, /Operating Improvement|Latest Insights|Knowledge Fields/);
   assert.doesNotMatch(html, /codex-preview|SkeletonPreview/);
+});
+
+test("renders a separate English site", async () => {
+  const response = await render("/en");
+  assert.equal(response.status, 200);
+  const html = await response.text();
+  assert.match(html, /Operating Improvement/);
+  assert.match(html, /Latest Insights/);
+  assert.match(html, /AI Enablement/);
+  assert.match(html, /href="\/"/);
+  assert.doesNotMatch(html, /企业经营提升|最新观点|知识领域/);
 });
 
 test("renders the insights knowledge tree", async () => {
@@ -23,8 +36,19 @@ test("renders the insights knowledge tree", async () => {
   assert.equal(response.status, 200);
   const html = await response.text();
   assert.match(html, /按知识树组织/);
-  assert.match(html, /M&amp;A Integration|M&A Integration/);
+  assert.match(html, /并购整合/);
+  assert.match(html, /href="\/en\/insights"/);
   assert.doesNotMatch(html, /改激励之前/);
+});
+
+test("renders the English insights directory", async () => {
+  const response = await render("/en/insights");
+  assert.equal(response.status, 200);
+  const html = await response.text();
+  assert.match(html, /Organized by knowledge/);
+  assert.match(html, /M&amp;A Integration|M&A Integration/);
+  assert.match(html, /href="\/insights"/);
+  assert.doesNotMatch(html, /按知识树组织|并购整合/);
 });
 
 test("removed dummy insight is no longer available", async () => {

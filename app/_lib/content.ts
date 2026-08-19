@@ -1,11 +1,11 @@
 export const categories = [
-  { key: "Revenue", zh: "增长", en: "Revenue", note: "从客户价值到可持续收入" },
-  { key: "Margin", zh: "利润", en: "Margin", note: "让增长转化为真实的盈利能力" },
-  { key: "Cash", zh: "现金", en: "Cash", note: "营运资本与现金纪律" },
-  { key: "Organization", zh: "组织", en: "Organization", note: "组织能力、人才与责任体系" },
-  { key: "Operating System", zh: "执行", en: "Operating System", note: "把战略变成可重复的经营动作" },
-  { key: "AI Enablement", zh: "AI 赋能", en: "AI Enablement", note: "让 AI 成为企业经营能力的一部分" },
-  { key: "M&A Integration", zh: "并购整合", en: "M&A Integration", note: "从交易完成走向价值兑现" },
+  { key: "Revenue", zh: "增长", en: "Revenue", note: "从客户价值到可持续收入", noteEn: "From customer value to sustainable revenue" },
+  { key: "Margin", zh: "利润", en: "Margin", note: "让增长转化为真实的盈利能力", noteEn: "Turning growth into durable profitability" },
+  { key: "Cash", zh: "现金", en: "Cash", note: "营运资本与现金纪律", noteEn: "Working capital and cash discipline" },
+  { key: "Organization", zh: "组织", en: "Organization", note: "组织能力、人才与责任体系", noteEn: "Capability, talent and accountability" },
+  { key: "Operating System", zh: "执行", en: "Operating System", note: "把战略变成可重复的经营动作", noteEn: "Turning strategy into repeatable operating action" },
+  { key: "AI Enablement", zh: "AI 赋能", en: "AI Enablement", note: "让 AI 成为企业经营能力的一部分", noteEn: "Making AI part of the enterprise operating capability" },
+  { key: "M&A Integration", zh: "并购整合", en: "M&A Integration", note: "从交易完成走向价值兑现", noteEn: "Moving from deal close to value realization" },
 ] as const;
 
 export type Insight = {
