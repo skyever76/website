@@ -18,7 +18,7 @@ const placeholders = Array.from({ length: 2 - insights.length });
     </section>
     <section class="latest shell" aria-labelledby="latest-title">
       <div class="section-heading"><p>01</p><h2 id="latest-title">最新观点</h2></div>
-      <div><div class="latest-grid">{insights.map((insight) => <InsightCard insight={insight} />)}{placeholders.map(() => <div class="latest-placeholder"><span class="meta">下一篇</span><p>正在整理</p><small>只发布经过确认、值得长期保留的内容。</small></div>)}</div><a class="text-link" href="/insights">查看全部洞察 →</a></div>
+      <div><div class="latest-grid">{insights.map((insight) => <InsightCard insight={insight} />)}{placeholders.map(() => <div class="latest-placeholder"><span class="meta">下一篇</span><p>正在整理</p><small>只发布经过确认，值得长期保留的内容。</small></div>)}</div><a class="text-link" href="/insights">查看全部洞察 →</a></div>
     </section>
     <section class="knowledge shell" aria-labelledby="knowledge-title">
       <div class="section-heading"><p>02</p><h2 id="knowledge-title">知识领域</h2></div>
