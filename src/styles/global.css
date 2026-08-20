@@ -130,10 +130,10 @@ h1 { max-width:900px; margin:0; font-size:clamp(52px,8.6vw,124px); line-height:.
 .capability-list h3 small { display:block; margin-top:12px; color:var(--muted); font-size:16px; font-weight:450; letter-spacing:0; }
 .capability-list p { max-width:500px; margin:0; color:var(--muted); font-size:17px; line-height:1.8; text-wrap:balance; }
 .about-philosophy { margin-bottom:130px; padding:82px 0 54px; border-top:1px solid var(--ink); border-bottom:1px solid var(--line); }
-.about-philosophy > p { max-width:1080px; margin:0; font-size:clamp(42px,7vw,86px); line-height:1.15; letter-spacing:-.06em; font-weight:650; }
+.about-philosophy > p { max-width:1080px; margin:0; font-size:clamp(42px,7vw,86px); line-height:1.15; letter-spacing:-.06em; font-weight:650; text-wrap:balance; }
 .about-philosophy > div { max-width:620px; margin:70px 0 0 auto; display:grid; grid-template-columns:155px 1fr; gap:24px; }
-.about-philosophy span { color:var(--muted); font-size:15px; }
-.about-philosophy div p { margin:0; font-size:17px; line-height:1.8; }
+.about-philosophy span { color:var(--muted); font-size:18px; }
+.about-philosophy div p { margin:0; font-size:18px; line-height:1.8; }
 .about-english > div:last-child { max-width:760px; }
 .about-english > div:last-child > p { margin:0 0 25px; font-size:17px; line-height:1.9; }
 
