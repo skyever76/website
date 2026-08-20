@@ -108,7 +108,7 @@ h1 { max-width:900px; margin:0; font-size:clamp(52px,8.6vw,124px); line-height:.
 .method-steps h2 { margin:0; font-size:clamp(58px,8.2vw,112px); line-height:.95; letter-spacing:-.065em; text-wrap:balance; }
 :lang(en) .method-steps h2 { font-size:clamp(44px,6vw,80px); letter-spacing:-.055em; }
 .method-steps h2 small { display:block; margin-top:13px; color:var(--muted); font-size:16px; font-weight:450; letter-spacing:.01em; }
-.method-steps article > p { max-width:420px; margin:0; font-size:clamp(23px,2.6vw,34px); line-height:1.55; letter-spacing:-.03em; text-wrap:balance; }
+.method-steps article > p { max-width:420px; margin:0 0 0 auto; font-size:clamp(23px,2.6vw,34px); line-height:1.55; letter-spacing:-.03em; text-wrap:balance; }
 .method-sequence { margin-bottom:125px; padding:40px 0; display:flex; justify-content:space-between; border-top:1px solid var(--ink); border-bottom:1px solid var(--line); }
 .method-sequence span { display:flex; align-items:center; gap:28px; font-size:16px; font-weight:600; }
 .method-sequence i { color:var(--muted); font-style:normal; font-weight:400; }
