@@ -7,7 +7,7 @@ const enPath = isEnglish ? path : (path === "/" ? "/en" : `/en${path}`);
 const withLocale = (target: string) => isEnglish ? `/en${target === "/" ? "" : target}` : target;
 ---
 <header class="site-header shell">
-  <a class="wordmark" href={isEnglish ? "/en" : "/"}><strong>Adam Cui</strong><span>{isEnglish ? "Operating Improvement" : "企业经营提升"}</span></a>
+  <a class:list={{ wordmark: true, english: isEnglish }} href={isEnglish ? "/en" : "/"}><strong>Adam Cui</strong><span>{isEnglish ? "Operating Improvement" : "企业经营提升"}</span></a>
   <nav aria-label={isEnglish ? "Primary navigation" : "主导航"}>
     <a href={withLocale("/insights")}>{isEnglish ? "Insights" : "洞察"}</a>
     <a href={withLocale("/playbooks")}>{isEnglish ? "Method" : "方法"}</a>
