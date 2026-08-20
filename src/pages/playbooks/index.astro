@@ -4,7 +4,7 @@ import { zhSteps } from "../../data/site";
 ---
 <BaseLayout title="Adam Cui 四步法" description="止血，修理，重回增长，平台化：Adam Cui 的企业经营改善四步法。" path="/playbooks">
   <main>
-    <section class="method-hero shell"><p class="eyebrow">Adam Cui 四步法</p><h1>先活下来，<br />再长起来。</h1><p>经营改善有顺序。先稳住基本盘，再修复系统，重启增长，最终形成可以复制的平台。</p></section>
+    <section class="method-hero shell"><p class="eyebrow">Adam Cui 四步法</p><h1>先活下来，<br />再长起来。</h1><p>经营改善有顺序。先稳住基本盘，再修复系统，<br class="method-copy-break" />重启增长，最终形成可以复制的平台。</p></section>
     <section class="method-steps shell" aria-label="Adam Cui 企业经营改善四步法">{zhSteps.map((step, index) => <article><span class="method-index">{String(index + 1).padStart(2, "0")}</span><h2>{step.title}</h2><p>{step.statement}</p></article>)}</section>
     <section class="method-sequence shell" aria-label="四步法顺序">{zhSteps.map((step, index) => <span>{step.title}{index < zhSteps.length - 1 && <i>→</i>}</span>)}</section>
   </main>

@@ -97,7 +97,8 @@ h1 { max-width:900px; margin:0; font-size:clamp(52px,8.6vw,124px); line-height:.
 .method-hero .eyebrow { color:var(--ink); font-size:clamp(18px,1.5vw,24px); font-weight:650; letter-spacing:-.03em; }
 .method-hero h1 { max-width:1080px; font-size:clamp(66px,10vw,142px); line-height:.92; }
 :lang(en) .method-hero h1 { font-size:clamp(62px,8.7vw,120px); }
-.method-hero > p:last-child { max-width:610px; margin:80px 0 0 auto; color:var(--muted); font-size:18px; line-height:1.8; text-wrap:balance; }
+.method-hero > p:last-child { max-width:760px; margin:80px 0 0 auto; color:var(--muted); font-size:18px; line-height:1.8; text-wrap:pretty; }
+.method-copy-break { display:block; }
 .method-steps { padding:0 0 130px; }
 .method-steps article { min-height:310px; display:grid; grid-template-columns:90px 1fr 1fr; gap:35px; align-items:center; border-bottom:1px solid var(--line); }
 .method-index { align-self:start; padding-top:34px; color:var(--muted); font-size:clamp(22px,2.2vw,30px); line-height:1; }
@@ -207,6 +208,7 @@ h1 { max-width:900px; margin:0; font-size:clamp(52px,8.6vw,124px); line-height:.
   .method-hero { min-height:auto; padding:72px 0 84px; }
   .method-hero h1 { font-size:clamp(58px,17vw,82px); line-height:.98; }
   .method-hero > p:last-child { margin-top:65px; font-size:16px; }
+  .method-copy-break { display:none; }
   .method-steps { padding-bottom:90px; }
   .method-steps article { min-height:270px; grid-template-columns:38px 1fr; gap:15px; align-content:center; }
   .method-index { padding-top:5px; font-size:20px; }
