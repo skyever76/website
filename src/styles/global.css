@@ -71,6 +71,9 @@ h1 { max-width:900px; margin:0; font-size:clamp(52px,8.6vw,124px); line-height:.
 .footer { padding:36px 0 42px; display:grid; grid-template-columns:1fr auto; gap:70px; border-top:1px solid var(--ink); font-size:16px; }
 .footer strong { font-size:17px; }
 .footer p { margin:8px 0 0; color:var(--muted); }
+.footer-brand { width:80px; }
+.footer-brand.english { width:150px; }
+.footer-brand strong, .footer-brand p { display:block; width:100%; }
 .footer-links { display:flex; gap:25px; align-items:flex-start; }
 .footer-links a:hover { text-decoration:underline; text-underline-offset:4px; }
 .copyright { grid-column:1/-1; margin-top:50px!important; font-size:15px; }
