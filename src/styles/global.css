@@ -67,7 +67,7 @@ h1 { max-width:900px; margin:0; font-size:clamp(52px,8.6vw,124px); line-height:.
 .field-grid i { position:absolute; right:4px; top:17px; font-style:normal; transition:transform .2s ease; }
 .field-grid a:hover i { transform:translate(3px,-3px); }
 .manifesto { margin-bottom:120px; padding:74px 0; border-top:1px solid var(--ink); border-bottom:1px solid var(--line); }
-.manifesto p { max-width:900px; margin:0; font-size:clamp(42px,7vw,92px); line-height:1.12; letter-spacing:-.065em; font-weight:670; }
+.manifesto p { max-width:1180px; margin:0; font-size:clamp(42px,7vw,92px); line-height:1.12; letter-spacing:-.065em; font-weight:670; text-wrap:balance; }
 .footer { padding:36px 0 42px; display:grid; grid-template-columns:1fr auto; gap:70px; border-top:1px solid var(--ink); font-size:16px; }
 .footer strong { font-size:17px; }
 .footer p { margin:8px 0 0; color:var(--muted); }
