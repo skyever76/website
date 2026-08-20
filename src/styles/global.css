@@ -108,7 +108,7 @@ h1 { max-width:900px; margin:0; font-size:clamp(52px,8.6vw,124px); line-height:.
 .method-steps h2 { margin:0; font-size:clamp(58px,8.2vw,112px); line-height:.95; letter-spacing:-.065em; text-wrap:balance; }
 :lang(en) .method-steps h2 { font-size:clamp(44px,6vw,80px); letter-spacing:-.055em; }
 .method-steps h2 small { display:block; margin-top:13px; color:var(--muted); font-size:16px; font-weight:450; letter-spacing:.01em; }
-.method-steps article > p { max-width:420px; margin:0 0 0 auto; font-size:clamp(23px,2.6vw,34px); line-height:1.55; letter-spacing:-.03em; text-wrap:balance; }
+.method-steps article > p { max-width:420px; margin:0 0 0 auto; font-size:clamp(23px,2.6vw,34px); line-height:1.55; letter-spacing:-.03em; text-wrap:balance; text-align:right; }
 .method-sequence { margin-bottom:125px; padding:40px 0; display:flex; justify-content:space-between; border-top:1px solid var(--ink); border-bottom:1px solid var(--line); }
 .method-sequence span { display:flex; align-items:center; gap:28px; font-size:16px; font-weight:600; }
 .method-sequence i { color:var(--muted); font-style:normal; font-weight:400; }
@@ -217,6 +217,7 @@ h1 { max-width:900px; margin:0; font-size:clamp(52px,8.6vw,124px); line-height:.
   .method-index { padding-top:5px; font-size:20px; }
   .method-steps h2 { font-size:clamp(51px,15vw,72px); }
   .method-steps article > p { grid-column:2; margin-top:24px; font-size:22px; }
+  .method-steps article > p { text-align:left; }
   .method-sequence { margin-bottom:90px; padding:30px 0; flex-wrap:wrap; gap:18px 0; }
   .method-sequence span { gap:12px; font-size:15px; }
   .about-hero { min-height:auto; padding:72px 0 84px; }
