@@ -93,6 +93,7 @@ h1 { max-width:900px; margin:0; font-size:clamp(52px,8.6vw,124px); line-height:.
 .empty { margin:0; padding:16px 0 0; border-top:1px solid var(--line); color:#aaa69e; font-size:16px; }
 
 .method-hero { min-height:76vh; padding:95px 0 105px; display:flex; flex-direction:column; justify-content:space-between; border-bottom:1px solid var(--ink); }
+.method-hero .eyebrow { color:var(--ink); font-size:clamp(18px,1.5vw,24px); font-weight:650; letter-spacing:-.03em; }
 .method-hero h1 { max-width:1080px; font-size:clamp(66px,10vw,142px); line-height:.92; }
 :lang(en) .method-hero h1 { font-size:clamp(62px,8.7vw,120px); }
 .method-hero > p:last-child { max-width:610px; margin:80px 0 0 auto; color:var(--muted); font-size:18px; line-height:1.8; text-wrap:balance; }
